@@ -7,7 +7,7 @@ import BugEdit from './components/bugedit';
 import NotFound from './components/notfound';
 
 ReactDOM.render(
-  <Router history={hashHistory}>  
+  <Router history={hashHistory}>
   <Redirect from="/" to="/bugs"/>
   <Route path="/bugs" component={BugList}/>
   <Route path="/bugs/:id" component={BugEdit}/>
