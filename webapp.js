@@ -1,7 +1,6 @@
 var url = 'mongodb://localhost:27017/bugtracker';
 
 var express = require('express');
-// var fallback = require('express-history-api-fallback');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectId;
@@ -14,8 +13,6 @@ app.use(bodyParser.json());
 
 var root = __dirname + '/public';
 app.use(express.static(root));
-
-// app.use(fallback('index.html', { root: root }));
 
 app.get('/api/bugs', function(req, res) {
   var filter = {};
