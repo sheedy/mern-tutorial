@@ -1,5 +1,7 @@
 import React from 'react';
-import {Panel, Input, ButtonInput} from 'react-bootstrap';
+import Panel from 'react-bootstrap/lib/Panel';
+import Input from 'react-bootstrap/lib/Input';
+import ButtonInput from 'react-bootstrap/lib/ButtonInput';
 
 export default class BugAdd extends React.Component {
   constructor() {

@@ -2,7 +2,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, hashHistory, Redirect} from 'react-router';
+import Router from 'react-router/lib/Router';
+import Route from 'react-router/lib/Route';
+import hashHistory from 'react-router/lib/hashHistory';
+import Redirect from 'react-router/lib/Redirect';
 
 import BugList from './components/buglist';
 import BugEdit from './components/bugedit';

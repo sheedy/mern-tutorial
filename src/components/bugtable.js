@@ -1,6 +1,6 @@
 import React from 'react';
-import {Panel, Table} from 'react-bootstrap';
-
+import Panel from 'react-bootstrap/lib/Panel';
+import Table from 'react-bootstrap/lib/Table';
 import BugRow from './bugrow';
 
 export default class BugTable extends React.Component {

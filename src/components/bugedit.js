@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from 'react-router';
 import $ from 'jquery';
-import {Panel, Input, ButtonToolbar, Button, Alert} from 'react-bootstrap';
+import Link from 'react-router/lib/Link';
+import Panel from 'react-bootstrap/lib/Panel';
+import Input from 'react-bootstrap/lib/Input';
+import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
+import Button from 'react-bootstrap/lib/Button';
+import Alert from 'react-bootstrap/lib/Alert';
 
 export default class BugEdit extends React.Component {
   constructor() {
@@ -115,7 +119,7 @@ export default class BugEdit extends React.Component {
               <Link className="btn btn-default" to="/bugs">Back to bug list</Link>
             </ButtonToolbar>
           </form>
-          {this.state.successAlertVisible ? success: null}
+          {this.state.successAlertVisible? success: null}
         </Panel>
       </div>
     );

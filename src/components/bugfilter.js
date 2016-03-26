@@ -1,13 +1,11 @@
 import React from 'react';
 
-import {
-  Panel,
-  Grid,
-  Row,
-  Col,
-  Input,
-  ButtonInput
-} from 'react-bootstrap';
+import Panel from 'react-bootstrap/lib/Panel';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Input from 'react-bootstrap/lib/Input';
+import ButtonInput from 'react-bootstrap/lib/ButtonInput';
 
 export default class BugFilter extends React.Component {
   constructor(props) {
