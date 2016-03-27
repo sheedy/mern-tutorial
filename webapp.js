@@ -6,7 +6,10 @@ import mongoose from 'mongoose';
 
 mongoose.connect(url);
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', (err) => {
+  console.error(`Connection error: ${err}`);
+  process.exit(1);
+});
 db.once('open', () => {
   console.log('Connected to MongoDB server.');
 });
