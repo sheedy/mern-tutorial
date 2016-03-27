@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/lib/Col';
 import Input from 'react-bootstrap/lib/Input';
 import ButtonInput from 'react-bootstrap/lib/ButtonInput';
 
-export default class BugFilter extends React.Component {
+class BugFilter extends React.Component {
   constructor(props) {
     super(props);
     this.onChangeStatus = this.onChangeStatus.bind(this);
@@ -15,39 +15,42 @@ export default class BugFilter extends React.Component {
     this.applyFilter = this.applyFilter.bind(this);
     this.state = {
       status: this.props.filter.status,
-      priority: this.props.filter.priority
+      priority: this.props.filter.priority,
     };
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.filter.status === this.state.status && newProps.filter.priority === this.state.priority) {
+    if (newProps.filter.status === this.state.status &&
+      newProps.filter.priority === this.state.priority) {
       return;
     }
-    this.setState({status: newProps.filter.status, priority: newProps.filter.priority});
+    this.setState({ status: newProps.filter.status, priority: newProps.filter.priority });
   }
 
   onChangeStatus(e) {
-    this.setState({status: e.target.value});
+    this.setState({ status: e.target.value });
   }
 
   onChangePriority(e) {
-    this.setState({priority: e.target.value});
+    this.setState({ priority: e.target.value });
   }
 
   applyFilter() {
-    var filter = {};
-    if (this.state.status)
+    const filter = {};
+    if (this.state.status) {
       filter.status = this.state.status;
-    if (this.state.priority)
+    }
+    if (this.state.priority) {
       filter.priority = this.state.priority;
+    }
     this.props.onSubmit(filter);
   }
 
   render() {
     return (
       <div>
-        <Panel collapsible expanded={true} header="Bug filters">
-          <Grid fluid={true}>
+        <Panel collapsible expanded header="Bug filters">
+          <Grid fluid>
             <Row>
               <Col xs={12} sm={6} md={4}>
                 Status:
@@ -77,3 +80,10 @@ export default class BugFilter extends React.Component {
     );
   }
 }
+
+BugFilter.propTypes = {
+  filter: React.PropTypes.object,
+  onSubmit: React.PropTypes.func.isRequired,
+};
+
+export default BugFilter;
