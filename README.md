@@ -8,7 +8,7 @@ Start a MongoDB instance:
 $ docker run --name mongo-mern-tutorial -p "27017:27017" -d mongo
 ```
 
-Start a MongoDB toolbox and apply `initDatabase.js` script:
+(*Optional*) Start a MongoDB toolbox and apply `initDatabase.js` script:
 
 ```shell
 $ docker run --rm -it -v "${PWD}:/src" --net="host" deviantony/toolbox:mongodb zsh
@@ -17,10 +17,16 @@ $ docker run --rm -it -v "${PWD}:/src" --net="host" deviantony/toolbox:mongodb z
 
 ## Node server
 
-Start the node server:
+Babelify the server code (watch mode enabled):
 
 ```shell
-$ node webapp.js
+$ npm run babel
+```
+
+In another terminal, start the node server:
+
+```shell
+$ npm run node
 ```
 
 ## Webpack dev server
