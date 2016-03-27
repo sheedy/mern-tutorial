@@ -5,7 +5,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
-    './src/app.js'
+    './src/index.jsx'
   ],
 
   output: {
@@ -18,9 +18,13 @@ module.exports = {
     new webpack.NoErrorsPlugin()
   ],
 
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
   module: {
     loaders: [{
-      test: /\.js$/,
+      test: /\.jsx$/,
       loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],
       include: path.join(__dirname, 'src'),
       exclude: /node_modules/
