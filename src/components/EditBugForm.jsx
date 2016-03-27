@@ -7,17 +7,13 @@ import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
 import Button from 'react-bootstrap/lib/Button';
 import Alert from 'react-bootstrap/lib/Alert';
 
-class EditBugForm extends React.Component {
+import BaseComponent from './common/BaseComponent';
+
+class EditBugForm extends BaseComponent {
   constructor() {
     super();
-    this.loadData = this.loadData.bind(this);
-    this.showSuccessAlert = this.showSuccessAlert.bind(this);
-    this.dismissSuccess = this.dismissSuccess.bind(this);
-    this.onChangePriority = this.onChangePriority.bind(this);
-    this.onChangeStatus = this.onChangeStatus.bind(this);
-    this.onChangeOwner = this.onChangeOwner.bind(this);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.submit = this.submit.bind(this);
+    this._bind('loadData', 'showSuccessAlert', 'dismissSuccess', 'onChangePriority',
+    'onChangeStatus', 'onChangeOwner', 'onChangeTitle', 'submit');
     this.state = {
       successAlertVisible: false,
     };

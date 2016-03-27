@@ -3,10 +3,12 @@ import Panel from 'react-bootstrap/lib/Panel';
 import Input from 'react-bootstrap/lib/Input';
 import ButtonInput from 'react-bootstrap/lib/ButtonInput';
 
-class AddBugForm extends React.Component {
+import BaseComponent from './common/BaseComponent';
+
+class AddBugForm extends BaseComponent {
   constructor() {
     super();
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this._bind('handleSubmit');
   }
 
   handleSubmit(e) {

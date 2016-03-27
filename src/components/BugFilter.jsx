@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Panel from 'react-bootstrap/lib/Panel';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
@@ -7,12 +6,12 @@ import Col from 'react-bootstrap/lib/Col';
 import Input from 'react-bootstrap/lib/Input';
 import ButtonInput from 'react-bootstrap/lib/ButtonInput';
 
-class BugFilter extends React.Component {
+import BaseComponent from './common/BaseComponent';
+
+class BugFilter extends BaseComponent {
   constructor(props) {
     super(props);
-    this.onChangeStatus = this.onChangeStatus.bind(this);
-    this.onChangePriority = this.onChangePriority.bind(this);
-    this.applyFilter = this.applyFilter.bind(this);
+    this._bind('onChangeStatus', 'onChangePriority', 'applyFilter');
     this.state = {
       status: this.props.filter.status,
       priority: this.props.filter.priority,

@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 
+import BaseComponent from './common/BaseComponent';
 import BugTable from './BugTable';
 import AddBugForm from './AddBugForm';
 import BugFilter from './BugFilter';
@@ -8,12 +9,10 @@ import BugFilter from './BugFilter';
 const apiGetBugUrl = '/api/bugs';
 const apiAddBugUrl = '/api/bugs';
 
-class BugList extends React.Component {
+class BugList extends BaseComponent {
   constructor() {
     super();
-    this.loadData = this.loadData.bind(this);
-    this.addBug = this.addBug.bind(this);
-    this.changeFilter = this.changeFilter.bind(this);
+    this._bind('loadData', 'addBug', 'changeFilter');
     this.state = {
       bugs: [],
     };
