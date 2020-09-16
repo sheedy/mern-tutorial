@@ -18,7 +18,7 @@
     "jquery": "^2.2.1",
     "mongoose": "^4.4.10",
     "react": "^0.14.7",
-    "react-bootstrap": "^0.28.4",
+    "react-bootstrap": "^0.33.1",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1"
   },
